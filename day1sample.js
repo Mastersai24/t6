@@ -2,9 +2,9 @@ const http = require('http');
 const port = process.env.PORT || 3000
 
 const server = http.createServer((req, res) => {
-for (let i = 1; i <= 10; i++) {
-  const result = i * 10;
-  console.log(`10 * ${i} = ${result}`);}
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/html');
+    res.end('<h1>Hi this is Sai Praveen</h1>');
 });
 
 server.listen(port,() => {
