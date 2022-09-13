@@ -1,13 +1,12 @@
-// program to generate a multiplication table
+const http = require('http');
+const port = process.env.PORT || 3000
 
-// take input from the user
-const number = parseInt(prompt("Enter an integer: "));
+const server = http.createServer((req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/html');
+    res.end('<h1>Hello World</h1>');
+});
 
-//creating a multiplication table
-for (let i = 1; i <= 10; i++) {
-  // multiply i with number
-  const result = i * number;
-
-  // display the result
-  console.log(`${number} * ${i} = ${result}`);
-}
+server.listen(port,() => {
+    console.log(`Server running at port `+port);
+});
